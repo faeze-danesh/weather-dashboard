@@ -4,6 +4,7 @@ export default function SearchBar({ city, setCity, onSearch }) {
       <input
         value={city}
         onChange={(e) => setCity(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && onSearch()}
         placeholder="Enter city..."
         style={styles.input}
       />
@@ -27,6 +28,7 @@ const styles = {
     width: "220px",
     borderRadius: "8px",
     border: "1px solid #ccc",
+    outline: "none",
   },
   button: {
     padding: "10px 15px",
@@ -35,5 +37,6 @@ const styles = {
     background: "#2d6cdf",
     color: "white",
     cursor: "pointer",
+    transition: "0.3s",
   },
 };
