@@ -2,29 +2,9 @@
 
 A modern and responsive Weather Application built with React that allows users to search any city and get real-time weather information using an external API.
 
- Live Demo
+ Live Demo :  https://weather-dashboard-one-nu.vercel.app
 
- https://weather-dashboard-one-nu.vercel.app
-
-📁 Project Structure
-src/
-│
-├── components/
-│   ├── SearchBar.jsx
-│   ├── WeatherCard.jsx
-│
-├── hooks/
-│   ├── useWeather.js
-│
-├── services/
-│   ├── weatherAPI.js
-│
-├── App.jsx
-└── index.css
-
-
-
-What I Learned
+ What I Learned
 Working with APIs in React
 Using custom hooks for clean architecture
 Managing UI state (loading, error, data)
