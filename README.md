@@ -2,7 +2,7 @@
 
 A modern and responsive Weather Application built with React that allows users to search any city and get real-time weather information using an external API.
 
- Live Demo :  weather-dashboard-delta-henna.vercel.app
+ Live Demo :  https://weather-dashboard-delta-henna.vercel.app
 
  
 What I Learned
