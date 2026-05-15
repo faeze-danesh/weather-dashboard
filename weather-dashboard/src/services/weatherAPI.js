@@ -11,3 +11,14 @@ export async function getWeather(city) {
 
   return res.json();
 }
+export async function getForecast(city) {
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+  );
+
+  if (!res.ok) {
+    throw new Error("Forecast not found");
+  }
+
+  return res.json();
+}

@@ -1,18 +1,27 @@
-import { FaSun, FaCloud, FaCloudRain, FaSnowflake } from "react-icons/fa";
+import {
+  WiDaySunny,
+  WiCloudy,
+  WiRain,
+  WiSnow,
+  WiThunderstorm,
+  WiFog
+} from "react-icons/wi";
 
 export default function WeatherCard({ weather }) {
   const getIcon = (type) => {
     switch (type) {
       case "Clear":
-        return <FaSun />;
+        return <WiDaySunny size={60} />;
       case "Clouds":
-        return <FaCloud />;
+        return <WiCloudy size={60} />;
       case "Rain":
-        return <FaCloudRain />;
+        return <WiRain size={60} />;
       case "Snow":
-        return <FaSnowflake />;
+        return <WiSnow size={60} />;
+      case "Thunderstorm":
+        return <WiThunderstorm size={60} />;
       default:
-        return <FaSun />;
+        return <WiFog size={60} />;
     }
   };
 
@@ -20,12 +29,17 @@ export default function WeatherCard({ weather }) {
 
   return (
     <div style={styles.card}>
-      <h2>
-        {weather.name} {getIcon(weather.weather[0].main)}
-      </h2>
+      <h2>{weather.name}</h2>
 
-      <p style={styles.temp}>🌡 {weather.main.temp}°C</p>
-      <p>🌥 {weather.weather[0].main}</p>
+      <div style={styles.icon}>
+        {getIcon(weather.weather[0].main)}
+      </div>
+
+      <p style={styles.temp}>
+        🌡 {Math.round(weather.main.temp)}°C
+      </p>
+
+      <p>{weather.weather[0].main}</p>
     </div>
   );
 }
@@ -33,14 +47,22 @@ export default function WeatherCard({ weather }) {
 const styles = {
   card: {
     marginTop: "20px",
-    padding: "20px",
-    background: "white",
-    borderRadius: "12px",
+    padding: "25px",
+    borderRadius: "22px",
     display: "inline-block",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    background: "rgba(255,255,255,0.15)",
+    backdropFilter: "blur(20px)",
+    color: "white",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+    animation: "fadeIn 0.6s ease",
   },
+
+  icon: {
+    margin: "10px 0",
+  },
+
   temp: {
-    fontSize: "24px",
+    fontSize: "26px",
     fontWeight: "bold",
   },
 };
